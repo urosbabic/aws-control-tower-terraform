@@ -5,7 +5,7 @@ data "aws_organizations_organizational_units" "root" {
 }
 
 data "aws_organizations_organizational_units" "depth_1" {
-  for_each = toset([for child in data.aws_organizations_organizational_units.root.children : child.id])
+  for_each  = toset([for child in data.aws_organizations_organizational_units.root.children : child.id])
   parent_id = each.key
 }
 
