@@ -1,5 +1,7 @@
 data "aws_organizations_organization" "current" {}
 
+data "aws_partition" "current" {}
+
 data "aws_organizations_organizational_units" "root" {
   parent_id = data.aws_organizations_organization.current.roots[0].id
 }
@@ -89,7 +91,7 @@ resource "aws_controltower_control" "this" {
     for item in local.configured_controls : "${item.control_id}:${item.ou_id}" => item
   }
 
-  control_identifier = "arn:aws:controlcatalog:::control/${each.value.control_id}"
+  control_identifier = "arn:${data.aws_partition.current.partition}:controlcatalog:::control/${each.value.control_id}"
   target_identifier  = local.ou_id_to_arn[each.value.ou_id]
 
   dynamic "parameters" {

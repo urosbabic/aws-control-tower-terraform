@@ -5,9 +5,9 @@ description: Manage AWS Control Tower controls across organizational units with 
 
 # AWS Control Tower Terraform
 
-This repository manages AWS Control Tower controls as Terraform resources in the AWS Organizations management account. It follows the AWS Prescriptive Guidance pattern and uses global AWS Control Catalog identifiers.
+This repository provides a generic Terraform configuration for managing AWS Control Tower controls as resources in the AWS Organizations management account. It follows the AWS Prescriptive Guidance pattern and uses global AWS Control Catalog identifiers.
 
-The default configuration is empty. No control is enabled until you provide control IDs and OU IDs in a local variable file.
+The default configuration is empty and partition-aware. No control is enabled until you provide control IDs and OU IDs in a local variable file.
 
 ## Requirements
 
