@@ -11,6 +11,30 @@ This repository provides a generic Terraform configuration for managing AWS Cont
 
 The default configuration is empty and partition-aware. No control is enabled until you provide control IDs and OU IDs in a local variable file.
 
+## Architecture
+
+```mermaid
+flowchart LR
+	Developer[Developer] --> GitHub[GitHub repository]
+	GitHub --> Actions[GitHub Actions<br/>fmt, init, validate]
+	Actions --> Status[Validation status]
+
+	Config[terraform.tfvars<br/>Control Catalog IDs<br/>OU IDs and parameters] --> Terraform[Terraform configuration]
+	Backend[Optional S3 backend<br/>and state lock] --> Terraform
+	Terraform --> Organization[AWS Organizations<br/>management account]
+	Organization --> OUs[Organizational units]
+	Terraform --> ControlTower[AWS Control Tower<br/>Control Catalog]
+	ControlTower --> Controls[Preventive, detective,<br/>and proactive controls]
+	Controls --> OUs
+
+	classDef planned fill:#f4f7fb,stroke:#4c6a85,color:#17212b;
+	classDef external fill:#fff8e6,stroke:#b7791f,color:#3d2a0b;
+	class Developer,GitHub,Actions,Status,Config,Terraform,Backend planned;
+	class Organization,OUs,ControlTower,Controls external;
+```
+
+The repository currently validates the Terraform configuration only. The AWS Organizations and Control Tower path is the intended deployment architecture for an existing Control Tower landing zone.
+
 ## Requirements
 
 * AWS Control Tower 3.2 or later
