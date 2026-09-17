@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "controltower:DisableControl",
+        "controltower:EnableControl",
+        "controltower:GetControlOperation",
+        "controltower:GetEnabledControl",
+        "controltower:ListControlOperations",
+        "controltower:ListEnabledControls",
+        "controltower:ListTagsForResource",
+        "controltower:ResetEnabledControl",
+        "controltower:TagResource",
+        "controltower:UntagResource",
+        "controltower:UpdateEnabledControl",
+        "organizations:AttachPolicy",
+        "organizations:CreatePolicy",
+        "organizations:DeletePolicy",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:DescribePolicy",
+        "organizations:DetachPolicy",
+        "organizations:ListAccounts",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListPolicies",
+        "organizations:ListPoliciesForTarget",
+        "organizations:ListRoots",
+        "organizations:ListTagsForResource",
+        "organizations:ListTargetsForPolicy",
+        "organizations:TagResource",
+        "organizations:UntagResource",
+        "organizations:UpdatePolicy",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

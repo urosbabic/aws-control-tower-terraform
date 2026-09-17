@@ -1,0 +1,16 @@
+aws_region = "us-east-1"
+
+controls = [
+  {
+    control_names = [
+      # Replace with a global Control Catalog ID from the AWS Control Tower library.
+      # "503uicglhjkokaajywfpt6ros"
+    ]
+    organizational_unit_ids = [
+      # Replace with one or more OU IDs from the management account.
+      # "ou-1111-11111111"
+    ]
+  }
+]
+
+controls_with_params = []
