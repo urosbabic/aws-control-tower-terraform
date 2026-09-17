@@ -13,6 +13,10 @@ The default configuration is empty and partition-aware. No control is enabled un
 
 ## Architecture
 
+The following diagram is adapted from the AWS sample repository and shows controls applied across accounts in an organizational unit.
+
+[![AWS Control Tower controls architecture](https://raw.githubusercontent.com/aws-samples/aws-control-tower-controls-terraform/main/img/ctc-architecture.png)](https://github.com/aws-samples/aws-control-tower-controls-terraform/blob/main/img/ctc-architecture.png)
+
 ```mermaid
 flowchart LR
 	Developer[Developer] --> GitHub[GitHub repository]
